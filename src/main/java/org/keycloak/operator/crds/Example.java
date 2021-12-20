@@ -14,8 +14,41 @@
  */
 package org.keycloak.operator.crds;
 
+import io.sundr.adapter.api.AdapterContext;
+import io.sundr.adapter.api.Adapters;
+import io.sundr.builder.TypedVisitor;
+import io.sundr.model.PropertyBuilder;
+import io.sundr.model.TypeDef;
+import io.sundr.model.TypeDefBuilder;
+import io.sundr.model.utils.Types;
+
+import javax.lang.model.element.Modifier;
+import java.util.Collections;
+
 public class Example {
 
-    private Ref reference;
+    public static void main(String[] args) {
+        System.out.println("From here");
+
+
+        TypeDef realm = Adapters.adaptType(org.keycloak.representations.idm.RealmRepresentation.class, AdapterContext.getContext());
+        TypeDef dto = new TypeDefBuilder(realm)
+                .withName(realm.getName() + "DTO")
+                .withMethods(Collections.emptyList())
+                .withConstructors(Collections.emptyList())
+                .withExtendsList(Collections.emptyList())
+                .accept(new TypedVisitor<PropertyBuilder>() {
+                    public void visit(PropertyBuilder property) {
+                        System.out.println("property " + property.getName());
+
+                        System.out.println(property.getTypeRef());
+
+                        property.withModifiers(Types.modifiersToInt(Modifier.PUBLIC));
+                    }
+                })
+                .build();
+        System.out.println(dto.render());
+
+    }
 
 }

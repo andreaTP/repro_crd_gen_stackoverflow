@@ -18,9 +18,9 @@ import org.keycloak.representations.idm.RealmRepresentation;
 
 public class KeycloakRealmSpec {
 
-    private int example;
+    // private int example;
 
     // private RealmRepresentation realm = null;
-    private Example realm = null;
+    // private Example realm = null;
 
 }

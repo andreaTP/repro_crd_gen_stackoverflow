@@ -16,6 +16,7 @@ package org.keycloak.operator.crds;
 
 public class Ref {
 
-    private Example example;
+    private int example;
+    // private Example example;
 
 }

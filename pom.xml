@@ -18,15 +18,32 @@
     </properties>
 
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>io.fabric8</groupId>-->
+<!--            <artifactId>crd-generator-apt</artifactId>-->
+<!--            <version>${io-fabric8.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.fabric8</groupId>-->
+<!--            <artifactId>kubernetes-client</artifactId>-->
+<!--            <version>${io-fabric8.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
-            <groupId>io.fabric8</groupId>
-            <artifactId>crd-generator-apt</artifactId>
-            <version>${io-fabric8.version}</version>
+            <groupId>io.sundr</groupId>
+            <artifactId>sundr-core</artifactId>
+            <version>0.80.0</version>
         </dependency>
         <dependency>
-            <groupId>io.fabric8</groupId>
-            <artifactId>kubernetes-client</artifactId>
-            <version>${io-fabric8.version}</version>
+            <groupId>io.sundr</groupId>
+            <artifactId>sundr-adapter-reflect</artifactId>
+            <version>0.80.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.4.2.Final</version>
         </dependency>
 
         <dependency>
